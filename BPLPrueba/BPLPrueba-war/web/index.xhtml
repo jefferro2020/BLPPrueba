@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Contactos</title>
+    </h:head>
+    <h:body>
+        <h:form id = "form">
+            
+            <h:panelGrid columns="2">
+                <h:outputText value="Nombre">
+                    <p:inputText value="#{bean.nombre}" required="true">
+             <h:outputText value="Apellidos">
+                    <p:inputText value="#{bean.apellidos}" required="true">
+             <h:outputText value="Fecha Nacimiento">
+                    <p:inputText value="#{bean.fechaNecimiento}" required="true">
+             <h:outputText value="Telefono">
+                    <p:inputText value="#{bean.telefono}" required="true">
+             <h:outputText value="Email">
+                    <p:inputText value="#{bean.correo}" required="true"> 
+             <h:outputText value="Comentarios">
+                    <p:inputText value="#{bean.comentarios}" required="true"> 
+               
+                        <h:outputText value=""> 
+                            <p:commandButton actionListener="#{bean.crear}" 
+                                             update ="form"
+                                             value ="Crear"
+                                             icon="ui-icon-disk"/>
+            </h:panelGrid>      
+            
+            <p:dataTable value ="#{bean.contactos}" var ="contacto">
+                <p:column headerText="NOMBRE"> 
+                    <h:outputText value="#{contacto.nombre}"
+                </p:column>
+                
+                <p:column headerText="APELLIDOS"> 
+                    <h:outputText value="#{contacto.apellido}"
+                </p:column>
+                
+                <p:column headerText="FECHA NACIMIENTO"> 
+                    <h:outputText value="#{contacto.fechaNacimiento}"
+                </p:column>
+                
+                <p:column headerText="TELEFONO"> 
+                    <h:outputText value="#{contacto.telefono}"
+                </p:column>
+                
+                <p:column headerText="EMAIL"> 
+                    <h:outputText value="#{contacto.correoElectronico}"
+                </p:column>
+                
+                <p:column headerText="COMENTARIOS"> 
+                    <h:outputText value="#{contacto.comentario}"
+                </p:column>
+                
+                
+            </p:dataTable>
+        </h:form>h    
+    </h:body>
+</html>
+
